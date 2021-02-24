@@ -1,6 +1,6 @@
 package controller;
 
-public class Metodos {
+public class MetodoString {
 
 	private String lista[];
 	private int tamanho;
@@ -8,7 +8,7 @@ public class Metodos {
 	String msgListaVazia = "A lista está vazia";
 	
 //	Metodo construtor
-	public Metodos()
+	public MetodoString()
 	{
 		lista = new String[5];
 		tamanho = 0;
@@ -39,7 +39,7 @@ public class Metodos {
 	{
 		if (!listaCheia())
 		{
-				for (int i = tamanho; i > 0; i--)
+			for (int i = tamanho; i > 0; i--)
 				{
 					lista[i] = lista [i - 1];
 				}
@@ -51,7 +51,7 @@ public class Metodos {
 			return msgListaCheia;
 		}
 		
-		return novo + " foi adicionado na posição inicial da lista";
+		return "'" + novo + "' foi adicionado na posição inicial da lista";
 	}
 	
 	
@@ -67,7 +67,7 @@ public class Metodos {
 			return msgListaCheia;
 		}
 		
-		return novo + " foi adicionado na última posição da lista";
+		return "'" + novo + "' foi adicionado na última posição da lista";
 	}
 	
 	public String adicionarQualquer(String novo, int pos)
@@ -90,7 +90,7 @@ public class Metodos {
 			}
 			else
 			{
-				return "O elemento " + novo + " não foi adicionado pois a posição " + pos + " é inválida";
+				return "O elemento '" + novo + "' não foi adicionado pois a posição " + pos + " é inválida";
 			}
 		}
 		else
@@ -98,10 +98,10 @@ public class Metodos {
 			return msgListaCheia;
 		}
 		
-		return novo + " foi adicionado na " + pos + "ª posição da lista";
+		return "'" + novo + "' foi adicionado na " + pos + "ª posição da lista";
 	}
 	
-	public String removeInicio()
+	public String removerInicio()
 	{
 		String aux;
 		
@@ -114,7 +114,7 @@ public class Metodos {
 				lista[i - 1] = lista [i];
 			}
 			tamanho --;
-			return "O elemento " +  aux + " foi removido da lista (primeira posição).";
+			return "O elemento '" +  aux + "' foi removido da lista (primeira posição).";
 		}
 		else
 		{
@@ -122,7 +122,7 @@ public class Metodos {
 		}
 	}
 	
-	public String removeFinal()
+	public String removerFinal()
 	{
 		String aux;
 		
@@ -137,7 +137,7 @@ public class Metodos {
 					tamanho --;
 				}
 			}
-			return "O elemento " +  aux + " foi removido da lista (última posição).";
+			return "O elemento '" +  aux + "' foi removido da lista (última posição).";
 		}
 		else
 		{
@@ -145,7 +145,7 @@ public class Metodos {
 		}
 	}
 	
-	public String removeQualquer(int pos)
+	public String removerQualquer(int pos)
 	{
 		String aux = null;
 		
@@ -161,7 +161,7 @@ public class Metodos {
 					lista[i] = lista[i + 1];
 			}
 			tamanho --;
-			return "O elemento " + aux + " foi removido da lista (" + pos + "ª posição).";
+			return "O elemento '" + aux + "' foi removido da lista (" + pos + "ª posição).";
 		}
 		else
 		{
@@ -182,6 +182,5 @@ public class Metodos {
 		
 		return buffer.toString();
 	}
-	
-		
 }
+
