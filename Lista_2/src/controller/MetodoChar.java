@@ -35,7 +35,7 @@ public class MetodoChar {
 	}
 	
 
-	public String adicionarInicio(char novo)
+	public String adicionarInicio(char elemento)
 	{
 		if (!listaCheia())
 		{
@@ -43,15 +43,16 @@ public class MetodoChar {
 				{
 					listaChar[i] = listaChar [i - 1];
 				}
-				listaChar[0] = novo;
+				listaChar[0] = elemento;
 				tamanho ++;
+				System.out.println(listaChar[0]);
 		}
 		else
 		{
 			return msgListaCheia;
 		}
 		
-		return "'" + novo + "' foi adicionado na posição inicial da lista";
+		return "'" + elemento + "' foi adicionado na posição inicial da lista";
 	}
 	
 	
@@ -171,7 +172,7 @@ public class MetodoChar {
 	
 	public String percorrer()
 	{
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		
 		for (int i = 0; i < tamanho; i++)
 		{
