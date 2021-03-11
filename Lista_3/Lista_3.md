@@ -1,54 +1,54 @@
-### Atividades iguais ser„o zeradas.
-### ExercÌcios que envolvam codificaÁıes iguais ser„o zerados.
-
-### EXERCÕCIOS
+### Atividades iguais ser√£o zeradas.
+### Exerc√≠cios que envolvam codifica√ß√µes iguais ser√£o zerados.
 
 
-1) Uma fila È um tipo especial de lista com polÌtica que restringe a manipulaÁ„o dos elementos. A polÌtica da fila È First In First Out (FIFO), o primeiro elemento adicionado ser· removido primeiro. Implemente uma classe denominada Fila com esta polÌtica.
+1) Uma fila √© um tipo especial de lista com pol√≠tica que restringe a manipula√ß√£o dos elementos. A pol√≠tica da fila √© First In First Out (FIFO), o primeiro elemento adicionado ser√° removido primeiro. Implemente uma classe denominada Fila com esta pol√≠tica.
 
 
 Exemplo:
 
+
+
 Fila Vazia
 
 
-![](../Assets/TesteDeMesa1_Lista2.PNG)
+<img src="https://github.com/CTRLMarcws/IED001_ADS_FATEC-ZL/blob/main/Assets/TesteDeMesa1_Lista2.PNG"  width=250px height=200px/>
 
-
-Adiciona um elemento (20)
-Qual È o Ìndice do inÌcio da fila? _____________
-Qual È o elemento do inÌcio da fila? ___________
-Qual È o Ìndice do final da fila? ______________
-Qual È o elemento do final da fila? ____________
+Adiciona um elemento (20)<br />
+Qual √© o √≠ndice do in√≠cio da fila? _____________<br />
+Qual √© o elemento do in√≠cio da fila? ___________<br />
+Qual √© o √≠ndice do final da fila? ______________<br />
+Qual √© o elemento do final da fila? ____________<br />
 
 
 Adiciona um elemento (10)
 
-![](../Assets/TesteDeMesa2_Lista2.PNG)
+<img src="https://github.com/CTRLMarcws/IED001_ADS_FATEC-ZL/blob/main/Assets/TesteDeMesa2_Lista2.PNG"  width=250px height=200px/>
+
+Qual √© o √≠ndice do in√≠cio da fila? _____________<br />
+Qual √© o elemento do in√≠cio da fila? ___________<br />
+Qual √© o √≠ndice do final da fila? ______________<br />
+Qual √© o elemento do final da fila? ____________<br />
 
 
-Qual È o Ìndice do inÌcio da fila? _____________
-Qual È o elemento do inÌcio da fila? ___________
-Qual È o Ìndice do final da fila? ______________
-Qual È o elemento do final da fila? ____________
+2) Implemente uma Pilha para o problema apresentado no Exerc√≠cio 1. Implemente tamb√©m uma classe de teste que possui uma inst√¢ncia da classe Fila e uma inst√¢ncia da classe Pilha. Cada elemento removido da Fila deve ser adicionado no topo da Pilha. Cada elemento removido da Pilha deve ser adicionado no final da Fila.
 
+<br />
 
-2) Implemente uma Pilha para o problema apresentado no ExercÌcio 1. Implemente tambÈm uma classe de teste que possui uma inst‚ncia da classe Fila e uma inst‚ncia da classe Pilha. Cada elemento removido da Fila deve ser adicionado no topo da Pilha. Cada elemento removido da Pilha deve ser adicionado no final da Fila.
+3) A classe Livro possu√≠ atributos que s√£o criados na classe concreta e acessados por meio dos m√©todos p√∫blicos da classe (getters e setters). Dado o cen√°rio implemente uma Pilha em que:
 
+- [ ] Sejam criados em uma classe os atributos t√≠tulo do tipo de dado String e quantidade de exemplares do tipo de dado inteiro. Estes atributos devem ser acessados por meio de seus m√©todos p√∫blicos (getters e setters). Esta classe deve receber em seu m√©todo construtor a quantidade de elementos que a Pilha ter√° em sua capacidade.
+- [ ] Implemente uma classe que ter√° os m√©todos de push e pop, para realizar as opera√ß√µes de adicionar e remover os elementos da Pilha. Esta classe dever√° conter um vetor est√°tico chamado Livro dados[]
+- [ ] Crie um m√©todo que receba os dados de entrada para a Pilha.
+- [ ] Crie um m√©todo que realize a exibi√ß√£o dos elementos da Pilha.
+- [ ] Realize o teste de mesa para os cen√°rios de inclus√£o e exclus√£o da Pilha.
 
-3) A classe Livro possuÌ atributos que s„o criados na classe concreta e acessados por meio dos mÈtodos p˙blicos da classe (getters e setters). Dado o cen·rio implemente uma Pilha em que:
+<br />
 
-- [ ] Sejam criados em uma classe os atributos tÌtulo do tipo de dado String e quantidade de exemplares do tipo de dado inteiro. Estes atributos devem ser acessados por meio de seus mÈtodos p˙blicos (getters e setters). Esta classe deve receber em seu mÈtodo construtor a quantidade de elementos que a Pilha ter· em sua capacidade.
-- [ ] Implemente uma classe que ter· os mÈtodos de push e pop, para realizar as operaÁıes de adicionar e remover os elementos da Pilha. Esta classe dever· conter um vetor est·tico chamado Livro dados[]
-- [ ] Crie um mÈtodo que receba os dados de entrada para a Pilha.
-- [ ] Crie um mÈtodo que realize a exibiÁ„o dos elementos da Pilha.
-- [ ] Realize o teste de mesa para os cen·rios de inclus„o e exclus„o da Pilha.
+4) A classe Livro possu√≠ os seguintes atributos que s√£o criados na classe concreta e acessados por meio dos m√©todos p√∫blicos da classe (getters e setters). Dado o cen√°rio implemente uma Fila em que:
 
-
-4) A classe Livro possuÌ os seguintes atributos que s„o criados na classe concreta e acessados por meio dos mÈtodos p˙blicos da classe (getters e setters). Dado o cen·rio implemente uma Fila em que:
-
-- [ ] Sejam criados em uma classe os atributos tÌtulo do tipo de dado String e quantidade de exemplares do tipo de dado inteiro. Estes atributos devem ser acessados por meio de seus mÈtodos p˙blicos (getters e setters). Esta classe deve receber em seu mÈtodo construtor a quantidade de elementos que a Fila ter· em sua capacidade.
-- [ ] Implemente uma classe que ter· os mÈtodos de enqueue e dequeue, para realizar as operaÁıes de adicionar e remover os elementos da Fila. Esta classe dever· conter um vetor est·tico chamado Livro dados[]
-- [ ] Crie um mÈtodo que receba os dados de entrada para a Fila.
-- [ ] Crie um mÈtodo que realize a exibiÁ„o dos elementos da Fila.
-- [ ] Realize o teste de mesa para os cen·rios de inclus„o e exclus„o da Fila.
+- [ ] Sejam criados em uma classe os atributos t√≠tulo do tipo de dado String e quantidade de exemplares do tipo de dado inteiro. Estes atributos devem ser acessados por meio de seus m√©todos p√∫blicos (getters e setters). Esta classe deve receber em seu m√©todo construtor a quantidade de elementos que a Fila ter√° em sua capacidade.
+- [ ] Implemente uma classe que ter√° os m√©todos de enqueue e dequeue, para realizar as opera√ß√µes de adicionar e remover os elementos da Fila. Esta classe dever√° conter um vetor est√°tico chamado Livro dados[]
+- [ ] Crie um m√©todo que receba os dados de entrada para a Fila.
+- [ ] Crie um m√©todo que realize a exibi√ß√£o dos elementos da Fila.
+- [ ] Realize o teste de mesa para os cen√°rios de inclus√£o e exclus√£o da Fila.
