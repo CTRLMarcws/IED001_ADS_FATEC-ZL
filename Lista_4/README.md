@@ -26,4 +26,4 @@ Exercícios que envolvam codificações iguais serão zerados.
 -comente no código todas as associações entre classes
 
 
-3) Realize o teste de mesa para cada operação com uma entrada de no mínimo 10 elementos para os Exercícios 1 e 2.Explique também o conceito de ponteiros.
+3. Realize o teste de mesa para cada operação com uma entrada de no mínimo 10 elementos para os Exercícios 1 e 2.Explique também o conceito de ponteiros.
