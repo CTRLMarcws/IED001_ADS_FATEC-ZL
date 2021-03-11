@@ -10,6 +10,7 @@ public class Ls01_Ex11
 	{
 		// Variaveis
 		int x;
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		// Entrada de dados

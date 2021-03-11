@@ -14,6 +14,7 @@ public class Ls01_Ex05
 		// Variaveis
 		int mat[][] = new int [4][4];
 		int vet[] = {1, 3, 9, 27};
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		// Popular matriz
