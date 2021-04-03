@@ -12,7 +12,7 @@ public class Principal {
 		int ID = 0, RG = 0, tel = 0;
 		String nome = null, nasc = null;
 		
-		Fila fila = new Fila();//alterar
+		Fila fila = new Fila();
 		Atributos pessoa = new Atributos(ID, RG, tel, nome, nasc);
 		
 		
