@@ -1,4 +1,5 @@
-3. A  classe  Aluno possui atributos  que  são  criados  na  classe  concreta e  acessados  por meio  dos  métodos  públicos  da  classe  (getters  e  setters).  Dado  o  cenário  implemente uma Lista Encadeada que utilize pelo menos um método recursivo.  
+3.
+A  classe  Aluno possui atributos  que  são  criados  na  classe  concreta e  acessados  por meio  dos  métodos  públicos  da  classe  (getters  e  setters).  Dado  o  cenário  implemente uma Lista Encadeada que utilize pelo menos um método recursivo.  
 - Sejam criados  em uma  classe os atributos RA de tipo de dado inteiro, nome de tipo  de  dado  String,  turma  do  tipo  de  dado  String  e  semestre  do  tipode  dado String.  Estes  atributos  devem  ser  acessados  por  meio  de  seus  métodos  públicos (getters e setters).  
 - Implemente um método que adicione um aluno no final da lista  
 - Implemente um método que adicione um  aluno no início da lista  
