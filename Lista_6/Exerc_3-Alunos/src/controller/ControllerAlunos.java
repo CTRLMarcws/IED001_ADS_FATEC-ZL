@@ -10,12 +10,12 @@ public class ControllerAlunos
 {
 	private NO inicio;
 	private String msg = "";
-	
+
 	public ControllerAlunos()
 	{
 		inicio = null;
 	}
-	
+
 	public boolean listaVazia()
 	{
 		if(inicio == null)
@@ -24,7 +24,7 @@ public class ControllerAlunos
 		}
 		return false;
 	}
-	
+
 	public void adicionarInicio(Atributos aluno)
 	{
 		NO novo = new NO(aluno);
@@ -33,7 +33,7 @@ public class ControllerAlunos
 		//novo.setAluno(aluno);
 		//novo.setProx() = inicio;
 	}
-	
+
 	public void adicionarFinal(Atributos aluno)
 	{
 		if(listaVazia())
@@ -43,7 +43,7 @@ public class ControllerAlunos
 		else
 		{
 			NO auxiliar = inicio;
-			
+
 			while(auxiliar.prox != null)
 			{
 				auxiliar = auxiliar.prox;
@@ -52,11 +52,11 @@ public class ControllerAlunos
 			auxiliar.prox = novo;
 		}
 	}
-	
+
 	public void adicionarPosicao(Atributos aluno, int posicao)
 	{
 		NO novo = new NO (aluno);
-		
+
 		if(posicao == 1 || listaVazia())
 		{
 			adicionarInicio(aluno);
@@ -65,13 +65,13 @@ public class ControllerAlunos
 		{
 			NO auxiliar = inicio;
 			int i = 1;
-			
+
 			while (auxiliar.prox != null && i < (posicao - 1))
 			{
 				auxiliar = auxiliar.prox;
 				i++;
 			}
-			
+
 			if (i == (posicao - 1))
 			{
 				novo.prox = auxiliar.prox;
@@ -83,11 +83,11 @@ public class ControllerAlunos
 			}
 		}
 	}
-	
+
 	public Atributos removerInicio()
 	{
 		Atributos removido = new Atributos();
-		
+
 		if (listaVazia())
 		{
 			//"Erro, lista vazia.";
@@ -103,7 +103,7 @@ public class ControllerAlunos
 	public Atributos removerFinal()
 	{
 		Atributos removido = new Atributos();
-		
+
 		if(listaVazia())
 		{
 			//lista vazia
@@ -119,29 +119,31 @@ public class ControllerAlunos
 			{
 				NO auxiliar1 = inicio;
 				NO auxiliar2 = inicio;
-				
+
 				while (auxiliar1.prox != null)
 				{
 					auxiliar2 = auxiliar1;
 					auxiliar1 = auxiliar1.prox;
 				}
-				
+
 				removido = auxiliar1.aluno;
 				auxiliar2.prox= null; 
 			}
 		}
-		
+
 		return removido;
 	}
-	
+
 	public Atributos removerPosicao(int posicao)
 	{
 		Atributos removido = new Atributos();
 		int i = 1;
+		//		String msg; 
 		NO auxiliar1 = inicio;
-		
+
 		if(listaVazia())
 		{
+			//			return msg;
 			//lista vazia
 		}
 		if(posicao == 1)
@@ -155,7 +157,7 @@ public class ControllerAlunos
 				auxiliar1 = auxiliar1.prox;
 				i++;
 			}
-			
+
 			if(posicao > 1 || posicao == 0)
 			{
 				//posicao invalida
@@ -168,38 +170,48 @@ public class ControllerAlunos
 			{
 				auxiliar1 = inicio;
 				NO auxiliar2 = auxiliar1;
-				
+
 				while(posicao > 1)
 				{
 					auxiliar2 = auxiliar1;
 					auxiliar1 = auxiliar1.prox;
 					posicao--;
 				}
-				
+
 				removido = auxiliar1.aluno;
 				auxiliar2.prox = auxiliar1.prox;
 			}
 		}
-		
-		
+
+
 		return removido;
 	}
-	
+
 	public String percorrer()
 	{
 		NO auxiliar = inicio;
 		
-		msg = "Lista de alunos:\n\n";
-		
-		while(auxiliar != null)
+		if(listaVazia())
 		{
-			msg += "\nRA:       " + auxiliar.aluno.getRA()
-			     + "\nNome:     " + auxiliar.aluno.getNome()
-			     + "\nSemestre: " + auxiliar.aluno.getSemestre()
-			     + "\nTurma:    " + auxiliar.aluno.getTurma();
-			auxiliar = auxiliar.prox;
+			msg = "Lista vazia.";
 		}
-		
+		else
+		{
+			int i = 1;
+			msg = "Lista de alunos:\n";
+
+			while(auxiliar != null)
+			{
+				msg += "\n\n" + i
+						+ " -  RA:     " + auxiliar.aluno.getRA()
+						+ "\nNome:     " + auxiliar.aluno.getNome()
+						+ "\nSemestre: " + auxiliar.aluno.getSemestre()
+						+ "\nTurma:    " + auxiliar.aluno.getTurma();
+						auxiliar = auxiliar.prox;
+						i++;
+			}
+		}
+
 		return msg;
 	}
 }
