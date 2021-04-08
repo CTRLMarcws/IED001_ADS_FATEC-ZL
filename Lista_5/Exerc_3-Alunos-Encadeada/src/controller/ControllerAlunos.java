@@ -6,13 +6,10 @@ import javax.swing.JOptionPane;
 
 import entity.Atributos;
 
-// private int rA;
-// private String nome, turma, semestre;
 
 public class ControllerAlunos
 {
 	private NO inicio;
-	private String msg = "";
 
 	public ControllerAlunos()
 	{
@@ -199,6 +196,7 @@ public class ControllerAlunos
 	public String percorrer()
 	{
 		NO auxiliar = inicio;
+		String msg = "";
 		
 		if(listaVazia())
 		{

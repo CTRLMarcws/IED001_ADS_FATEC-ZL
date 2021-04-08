@@ -6,9 +6,6 @@ import javax.swing.JOptionPane;
 
 import entity.Atributos;
 
-// private int rA;
-// private String nome, turma, semestre;
-
 public class ControllerAlunos
 {
 	private NO inicio;
@@ -53,15 +50,20 @@ public class ControllerAlunos
 		}
 		else
 		{
-			NO auxiliar = inicio;
+			NO auxiliar =  buscarParaAdicionar(inicio);
 
-			while(auxiliar.prox != null)
-			{
-				auxiliar = auxiliar.prox;
-			}
 			NO novo = new NO (aluno);
 			auxiliar.setProx(novo);
 		}
+	}
+	
+	private NO buscarParaAdicionar(NO auxiliar)
+	{
+		if (auxiliar.getProx() != null)
+		{
+			return buscarParaAdicionar(auxiliar.getProx());
+		}
+		return auxiliar;
 	}
 
 	public void adicionarPosicao(Atributos aluno, int posicao)
@@ -128,21 +130,23 @@ public class ControllerAlunos
 			}
 			else
 			{
-				NO auxiliar1 = inicio;
-				NO auxiliar2 = inicio;
+				NO auxiliar = buscarParaRemover(inicio, inicio);
 
-				while (auxiliar1.getProx() != null)
-				{
-					auxiliar2 = auxiliar1;
-					auxiliar1 = auxiliar1.getProx();
-				}
-
-				removido = auxiliar1.aluno;
-				auxiliar2.setProx(null); 
+				removido = auxiliar.aluno;
+				auxiliar.setProx(null); 
 			}
 		}
 
 		return removido;
+	}
+
+	private NO buscarParaRemover(NO auxiliar1, NO auxiliar2)
+	{
+		if(auxiliar1.getProx() != null)
+		{
+			return buscarParaRemover(auxiliar1.getProx(), auxiliar1);
+		}
+			return auxiliar2;
 	}
 
 	public Atributos removerPosicao(int posicao)
