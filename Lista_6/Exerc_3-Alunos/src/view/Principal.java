@@ -27,7 +27,7 @@ public class Principal
 							+ "\n5 - Remover no final"
 							+ "\n6 - Remover em posição específica"
 							+ "\n7 - Demonstrar lista"
-							+ "\n9 - Finalizar\n\n"));
+							+ "\n9 - Finalizar\n\n", "Menu", 3));
 
 			switch (opc)
 			{
@@ -53,19 +53,25 @@ public class Principal
 						+ "\nNome:     " + aluno.getNome()
 						+ "\nTurma:    " + aluno.getTurma()
 						+ "\nSemestre: " + aluno.getSemestre()
-						+ "\nPosição:  " + posicao);
+						+ "\nPosição:  " + posicao, "Sucesso", 1);
 				break;
 
 			case 4:
 				aluno = new Atributos();
 				aluno = lista.removerInicio();
-				demonstrar(aluno, 1);
+				if(aluno.getRA() != 0)
+				{
+					demonstrar(aluno, 1);					
+				}
 				break;
 
 			case 5:
 				aluno = new Atributos();
 				aluno = lista.removerFinal();
-				demonstrar(aluno, 1);
+				if(aluno.getRA() != 0)
+				{
+					demonstrar(aluno, 1);					
+				}
 				break;
 
 			case 6:
@@ -73,11 +79,14 @@ public class Principal
 				posicao = Integer.parseInt(JOptionPane.showInputDialog(null,
 						"Informe a posição do aluno que deve ser removido da lista:"));
 				aluno = lista.removerPosicao(posicao);
-				demonstrar(aluno, 1);
+				if(aluno.getRA() != 0)
+				{
+					demonstrar(aluno, 1);					
+				}
 				break;
 
 			case 7:
-				JOptionPane.showMessageDialog(null, lista.percorrer());
+				JOptionPane.showMessageDialog(null, lista.percorrer(), "Lista de alunos", 1);
 				break;
 
 			case 9:
@@ -95,22 +104,24 @@ public class Principal
 	public static Atributos adicionar()
 	{
 		Atributos aluno = new Atributos();
-		int aux = 0;
-		while(aux == 0)
+		while(aluno.getRA() == 0)
 		{
 			try
 			{
-				aluno.setRA(Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o RA do aluno:")));			
-				aux = 1;
+				aluno.setRA(Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o RA do aluno:", "RA", 3)));
+				if(aluno.getRA() == 0)
+				{
+					JOptionPane.showMessageDialog(null,"O campo RA deve ser maior que zero.", "Erro", 0);					
+				}
 			}
 			catch(NumberFormatException err)
 			{
-				JOptionPane.showMessageDialog(null,"O campo RA é obrigatório e numérico.", "Erro" ,JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,"O campo RA é obrigatório, numérico e deve ser maior que zero.", "Erro", 0);
 			}
 		}
-		aluno.setNome(JOptionPane.showInputDialog(null, "Insira o nome do aluno:"));
-		aluno.setTurma(JOptionPane.showInputDialog(null, "Insira a turma do aluno:"));
-		aluno.setSemestre(JOptionPane.showInputDialog(null, "Insira o semestre do aluno:"));
+		aluno.setNome(JOptionPane.showInputDialog(null, "Insira o nome do aluno:", "Nome", 3));
+		aluno.setTurma(JOptionPane.showInputDialog(null, "Insira a turma do aluno:", "Turma", 3));
+		aluno.setSemestre(JOptionPane.showInputDialog(null, "Insira o semestre do aluno:", "Semestre", 3));
 		return aluno;
 	}
 
@@ -122,7 +133,7 @@ public class Principal
 					+ "\nRA:       " + aluno.getRA()
 					+ "\nNome:     " + aluno.getNome()
 					+ "\nTurma:    " + aluno.getTurma()
-					+ "\nSemestre: " + aluno.getSemestre());			
+					+ "\nSemestre: " + aluno.getSemestre(), "Sucesso", 1);
 		}
 		else
 		{
@@ -130,7 +141,7 @@ public class Principal
 					+ "\nRA:       " + aluno.getRA()
 					+ "\nNome:     " + aluno.getNome()
 					+ "\nTurma:    " + aluno.getTurma()
-					+ "\nSemestre: " + aluno.getSemestre());	
+					+ "\nSemestre: " + aluno.getSemestre(), "Sucesso", 1);	
 		}
 	}
 }

@@ -10,16 +10,6 @@ public class NO
 		this.aluno = aluno;
 		prox = null;
 	}
-
-	public Atributos getAluno()
-	{
-		return aluno;
-	}
-	
-	public void setAluno(Atributos aluno)
-	{
-		this.aluno = aluno;
-	}
 	
 	public NO getProx()
 	{

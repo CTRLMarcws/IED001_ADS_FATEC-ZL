@@ -50,23 +50,22 @@ public void adicionarFinal(double temp)
 	}
 }
 
-public void adicionarPosicao(double temp, int posicao)
+public double adicionarPosicao(double temp, int posicao)
 {
+	double err = 0;
 	NO novo = new NO();
 	novo.setTemp(temp);
-	
-	//inserir validações de lista vazia e lista cheia;
-	
-	if(posicao == 1)
+		
+	if(posicao == 1 || listaVazia())
 	{
 		adicionarInicio(temp);
 	}
 	else
 	{
 		NO auxiliar = inicio;
-		int i = 1; //?
+		int i = 1;
 		
-		while(auxiliar != null && i < (posicao - 1))//aux.setProx?
+		while(auxiliar != null && i < (posicao - 1))
 		{
 			auxiliar = auxiliar.getProx();
 			i++;
@@ -79,9 +78,10 @@ public void adicionarPosicao(double temp, int posicao)
 		}
 		else
 		{
-			//posição invalida
+			err = 1;
 		}
 	}
+	return err;
 }
 
 public double removerInicio()

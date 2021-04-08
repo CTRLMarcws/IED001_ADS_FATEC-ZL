@@ -1,6 +1,9 @@
 package controller;
 
 import entity.NO;
+
+import javax.swing.JOptionPane;
+
 import entity.Atributos;
 
 // private int rA;
@@ -24,14 +27,22 @@ public class ControllerAlunos
 		}
 		return false;
 	}
+	
+	public void msgListaVazia()
+	{
+		JOptionPane.showMessageDialog(null,"A lista está vazia.", "Erro" ,JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void msgPosicaoInvalida()
+	{
+		JOptionPane.showMessageDialog(null,"Posição invalida!\nTente novamente.", "Erro", 0);
+	}
 
 	public void adicionarInicio(Atributos aluno)
 	{
 		NO novo = new NO(aluno);
-		novo.prox = inicio;
+		novo.setProx(inicio);
 		inicio = novo;
-		//novo.setAluno(aluno);
-		//novo.setProx() = inicio;
 	}
 
 	public void adicionarFinal(Atributos aluno)
@@ -49,7 +60,7 @@ public class ControllerAlunos
 				auxiliar = auxiliar.prox;
 			}
 			NO novo = new NO (aluno);
-			auxiliar.prox = novo;
+			auxiliar.setProx(novo);
 		}
 	}
 
@@ -74,12 +85,12 @@ public class ControllerAlunos
 
 			if (i == (posicao - 1))
 			{
-				novo.prox = auxiliar.prox;
-				auxiliar.prox = novo;
+				novo.setProx(auxiliar.getProx());
+				auxiliar.setProx(novo);
 			}
 			else
 			{
-				//erro
+				msgPosicaoInvalida();
 			}
 		}
 	}
@@ -90,12 +101,12 @@ public class ControllerAlunos
 
 		if (listaVazia())
 		{
-			//"Erro, lista vazia.";
+			msgListaVazia();
 		}
 		else
 		{
 			removido = inicio.aluno;
-			inicio = inicio.prox;
+			inicio = inicio.getProx();
 		}
 		return removido;
 	}
@@ -106,7 +117,7 @@ public class ControllerAlunos
 
 		if(listaVazia())
 		{
-			//lista vazia
+			msgListaVazia();
 		}
 		else
 		{
@@ -120,14 +131,14 @@ public class ControllerAlunos
 				NO auxiliar1 = inicio;
 				NO auxiliar2 = inicio;
 
-				while (auxiliar1.prox != null)
+				while (auxiliar1.getProx() != null)
 				{
 					auxiliar2 = auxiliar1;
-					auxiliar1 = auxiliar1.prox;
+					auxiliar1 = auxiliar1.getProx();
 				}
 
 				removido = auxiliar1.aluno;
-				auxiliar2.prox= null; 
+				auxiliar2.setProx(null); 
 			}
 		}
 
@@ -138,29 +149,27 @@ public class ControllerAlunos
 	{
 		Atributos removido = new Atributos();
 		int i = 1;
-		//		String msg; 
 		NO auxiliar1 = inicio;
 
 		if(listaVazia())
 		{
-			//			return msg;
-			//lista vazia
+			msgListaVazia();			
 		}
-		if(posicao == 1)
+		else if(posicao == 1)
 		{
 			removido = removerInicio();
 		}
 		else
 		{
-			while(auxiliar1.prox != null)
+			while(auxiliar1.getProx() != null)
 			{
-				auxiliar1 = auxiliar1.prox;
+				auxiliar1 = auxiliar1.getProx();
 				i++;
 			}
 
-			if(posicao > 1 || posicao == 0)
+			if(posicao > i || posicao <= 0)
 			{
-				//posicao invalida
+				msgPosicaoInvalida();
 			}
 			else if (posicao == i)
 			{
@@ -174,12 +183,12 @@ public class ControllerAlunos
 				while(posicao > 1)
 				{
 					auxiliar2 = auxiliar1;
-					auxiliar1 = auxiliar1.prox;
+					auxiliar1 = auxiliar1.getProx();
 					posicao--;
 				}
 
 				removido = auxiliar1.aluno;
-				auxiliar2.prox = auxiliar1.prox;
+				auxiliar2.setProx(auxiliar1.getProx());
 			}
 		}
 
@@ -198,7 +207,7 @@ public class ControllerAlunos
 		else
 		{
 			int i = 1;
-			msg = "Lista de alunos:\n";
+			msg = "Lista de alunos:";
 
 			while(auxiliar != null)
 			{
